@@ -1,0 +1,80 @@
+group 'com.org.transfers'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'application'
+apply plugin: 'base'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.org.transfers.Application'
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    log4jVersion = '1.2.17'
+    jacksonVersion = '2.8.4'
+    h2Version = '1.4.196'
+    junitVersion = '4.12'
+    commonsdbVersion = '1.6'
+    mockitoVersion = '1.10.19'
+    httpclientVersion = '4.5.2'
+    jettyVersion = '9.4.21.v20190926'
+    jerseyVersion = '2.7'
+    tunykVersion = '1.0'
+    slf4jVersion ='1.7.6'
+    jooqVersion ='3.12.1'
+}
+
+dependencies {
+
+    compile("log4j:log4j:${log4jVersion}")
+    compile("com.h2database:h2:${h2Version}")
+
+    compile("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+    compile("com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${jacksonVersion}")
+
+    compile("commons-dbutils:commons-dbutils:${commonsdbVersion}")
+
+    compile("org.eclipse.jetty:jetty-server:${jettyVersion}")
+    compile("org.eclipse.jetty:jetty-servlet:${jettyVersion}")
+
+    compile("org.glassfish.jersey.core:jersey-server:${jerseyVersion}")
+    compile("org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}")
+    compile("org.glassfish.jersey.containers:jersey-container-jetty-http:${jerseyVersion}")
+
+    compile("com.tunyk.currencyconverter:currency-converter-api:${tunykVersion}")
+
+    compile("org.slf4j:jcl-over-slf4j:${slf4jVersion}")
+    compile("org.slf4j:slf4j-api:${slf4jVersion}")
+    compile("org.slf4j:slf4j-log4j12:${slf4jVersion}")
+
+    compile("org.jooq:jooq:${jooqVersion}")
+    compile("org.jooq:jooq-meta:${jooqVersion}")
+    compile("org.jooq:jooq-codegen:${jooqVersion}")
+
+    testCompile("junit:junit:${junitVersion}")
+    testCompile("org.mockito:mockito-all:${mockitoVersion}")
+    testCompile("org.apache.httpcomponents:httpclient:${httpclientVersion}")
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs "src/main/java"
+        }
+    }
+}

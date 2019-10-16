@@ -1,0 +1,274 @@
+{
+	"variables": [],
+	"info": {
+		"name": "R",
+		"_postman_id": "79d71f65-b9fa-ed23-d734-f57ad8a02767",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"description": "",
+			"item": [
+				{
+					"name": "getAccountById",
+					"request": {
+						"url": "http://localhost:8080/accounts/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAccounts",
+					"request": {
+						"url": "http://localhost:8080/accounts/list",
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getBalance",
+					"request": {
+						"url": "http://localhost:8080/accounts/list",
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"request": {
+						"url": "http://localhost:8080/accounts/create",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"accountId\": 5,\n\t\"accountType\": \"Savings\",\n\t\"accountValid\": true,\n\t\"customerName\": \"test5\",\n\t\"accountBalance\": 710,\n\t\"currencyCode\": \"GBP\",\n\t\"withDrawalLimit\": 1000\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "deposit",
+					"request": {
+						"url": "http://localhost:8080/accounts/1/deposit/10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "withdraw",
+					"request": {
+						"url": "http://localhost:8080/accounts/1/withdraw/10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"url": "http://localhost:8080/accounts/4",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "getAllCustomer",
+					"request": {
+						"url": "http://localhost:8080/customers/list",
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerByName",
+					"request": {
+						"url": "http://localhost:8080/customers/test5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"url": "http://localhost:8080/customers/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"customerName\": \"test7\",\r\n   \"email\": \"test7@test.com\",\r\n   \"country\": \"UK\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"url": "http://localhost:8080/customers/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"customerId\": 1,\r\n   \"customerName\": \"test11\",\r\n   \"email\": \"test1@gmail.com\",\r\n   \"country\": \"UK\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete customer",
+					"request": {
+						"url": "http://localhost:8080/customers/6",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transfer Money",
+			"description": "",
+			"item": [
+				{
+					"name": "transfer fund",
+					"request": {
+						"url": "http://localhost:8080/transfers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"amount\": 10,\r\n\t\"sourceAccountId\": 1,\r\n\t\"targetAccountId\":2\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
