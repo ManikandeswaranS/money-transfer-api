@@ -5,13 +5,13 @@
 This API is used to manage account data and customer data. Also this will enable you to transfer funds between
 different accounts.
 
-#High level Data design:
+# High level Data design:
 
 1. Customer table will hold the customer data having CustomerName, Email and Country.
 2. Account table will hold account data having CustomerName, Balance, CurrencyCode, AccountType, IsValid and WithDrawalLimit.
 3. test/resources/test_data.sql file has initial test data setup for unit tests and postman tests.
 
-#Test data :
+# Test data :
 ```
 INSERT INTO Customer (CustomerName, Email, Country) VALUES ('test1','test1@test.com','UK');
 INSERT INTO Customer (CustomerName, Email, Country) VALUES ('test2','test2@test.com','UK');
@@ -32,16 +32,16 @@ This API supports below operations on Account, Customer and mainly fund transfer
 
 Account :
 =======
-1. ######Get Account By Id
+1. ###### Get Account By Id
         url - http://localhost:8080/accounts/1
         header - Content-Type:application/json
-2. ######Get All Accounts
+2. ###### Get All Accounts
         url - http://localhost:8080/accounts/list
         header - Content-Type:application/json
-3. ######Get Account Balance
+3. ###### Get Account Balance
         url - http://localhost:8080/accounts/1/balance
         header - Content-Type:application/json
-4. ######PUT Create Account
+4. ###### PUT Create Account
         url - http://localhost:8080/accounts/create
         header - Content-Type:application/json
         body application/json:  {
@@ -53,25 +53,25 @@ Account :
                                     "currencyCode": "GBP",
                                     "withDrawLimit": 1000
                                }
-5. ######PUT Deposit fund
+5. ###### PUT Deposit fund
         url - http://localhost:8080/accounts/1/deposit/10
         header - Content-Type:application/json
-6. ######PUT WithDraw fund
+6. ###### PUT WithDraw fund
         url - http://localhost:8080/accounts/1/withdraw/10
         header - Content-Type:application/json
-7. ######DEL Account
+7. ###### DEL Account
         url - http://localhost:8080/accounts/4
         header - Content-Type:application/json
 
 Customer:
 =========
-1. ######Get Customer By Name
+1. ###### Get Customer By Name
         url - http://localhost:8080/customers/test5
         header - Content-Type:application/json
-2. ######Get All Customers
+2. ###### Get All Customers
         url - http://localhost:8080/customers/list
         header - Content-Type:application/json
-3. ######POST Create Customer
+3. ###### POST Create Customer
         url - http://localhost:8080/accounts/create
         header - Content-Type:application/json
         body application/json:  {
@@ -79,7 +79,7 @@ Customer:
                                    "email": "test5@test.com",
                                    "country": "UK"
                                 }
-4. ######PUT Update Customer
+4. ###### PUT Update Customer
         url - http://localhost:8080/customers/5
         header - Content-Type:application/json
         body application/json:  {
@@ -88,13 +88,13 @@ Customer:
                                    "email": "test5@gmail.com",
                                    "country": "UK"
                                 }
-5. ######DEL Customer
+5. ###### DEL Customer
         url - http://localhost:8080/customers/5
         header - Content-Type:application/json
 
 Transfers:
 =========
-1. ######POST Transfer Fund
+1. ###### POST Transfer Fund
         url - http://localhost:8080/transfers
         header - Content-Type:application/json
         body application/json:  {
